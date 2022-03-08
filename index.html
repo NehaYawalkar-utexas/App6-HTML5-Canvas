@@ -20,8 +20,8 @@ Brief Description of Goal of Code:
 The goal of this assignment is to develop skills in using <canvas> elements, to be used in further diagnostic apps. 
  
 Known Issues:
-- Footer was overlapping with content at bottom, such as rectangle and button. 
-- On laptop, Draw rectangle appears adjacent to canvas
+- Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result.
+- On laptop, Draw rectangle button appears adjacent to canvas instead of under. 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -44,8 +44,13 @@ function draw_a() {
 	var a_canvas = document.getElementById("a");
 	var a_context = a_canvas.getContext("2d");
 	a_context.fillRect(50, 25, 150, 100);
-
-
+}
+	
+function name_a() {
+	a_context.font = "bold 12px sans-serif";
+	a_context.textAlign = "center";
+	a_context.textBaseline = "middle";
+	a_context.fillFont("Neha Yawalkar", 50, 25);
 }
 	
 	
@@ -94,6 +99,9 @@ function draw_a() {
 	
 	<!-- this line creates a button calls the function draw_a when clicked-->
 	<input type="button" onclick="draw_a()" value="Draw rectangle">
+	
+	<!-- this line creates a button calls the function draw_a when clicked-->
+	<input type="button" onclick="name_a()" value="Print name">
 	
 	
 	
