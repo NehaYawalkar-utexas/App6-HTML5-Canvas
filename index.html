@@ -22,6 +22,7 @@ The goal of this assignment is to develop skills in using <canvas> elements, to 
 Known Issues:
 - Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result.
 - On laptop, Draw rectangle button appears adjacent to canvas instead of under. 
+- Need to redeclare var a_canvas and a_context within each function: not working when these vars are global.
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -67,7 +68,7 @@ function image_a() {
 	var a_canvas = document.getElementById("a");
 	var a_context = a_canvas.getContext("2d");
 	var img = new Image();
-	img.src = "utLogo.png";
+	img.src ="https://brand.utexas.edu/wp-content/uploads/2017/05/Athletics_Bevo_Silhouette.svg";
 	img.onload = function() {
 		a_context.drawImage(img, 200, 25);
 	}
