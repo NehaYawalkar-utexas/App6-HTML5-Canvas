@@ -22,7 +22,7 @@ The goal of this assignment is to develop skills in using <canvas> elements, to 
 Known Issues:
 1. Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result. (resolved -- moved content to top of screen)
 2. On laptop, Draw rectangle button appears adjacent to canvas instead of under. (resolved -- put buttons in flex-container with vertical direction)
-3. Need to redeclare var a_canvas and a_context within each function: not working when these vars are global. (resolved -- this is the correct way)
+3. Need to redeclare var a_canvas and a_context within each function: not working when these vars are global. (resolved -- this is a correct way)
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -80,10 +80,8 @@ Commentary on Known Issue 3
 I was confused about why we would not declare a_canvas and a_context as global variables, like below: 
 
 const a_canvas = document.getElementById("a");
-const a_context = a_canvas.getContext("2d");	
-
-
-The reason is because 
+const a_context = a_canvas.getContext("2d");
+The reason is because the HTML doesn't get loaded until after script runs, so there is no element titled "a", so the functions are not defined.
 
 **/
 	
@@ -169,6 +167,16 @@ function clear_a() {
 <div id="content" class="w3-container">
 	<p>Content goes here.</p>
 	
+	
+	
+	<!-- 
+	In the HTML of our code, we create all the elements that will be performing the functions detailed above. 
+	First, we create the actual canvas using the <canvas> tag. Within this tag, we define the width, height, and stroke style.
+	Then, I created a flex container, so that I could stack all the buttons vertically. 
+		I added a class called "flex-container" to the <style> tag above.
+		This class has display attribute as "flex" and the "flex-direction" as "column"
+	Buttons were created by using the <input> tag. Within this tag, we define the type, onclick, and value.
+	-->
 	
 	
 		
