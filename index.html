@@ -107,7 +107,7 @@ function clear_a() {
 }
 	
 	
-.container {
+.flex-container {
 	display: flex; /* or inline-flex */
 	flex-direction: column;
 	
@@ -133,17 +133,21 @@ function clear_a() {
 	<!-- this line creates the canvas, defines its dimensions, and pains a border around it-->
 	<canvas id="a" width = "300" height = "300" style = "border: 1px solid #000000;"></canvas>
 	
-	<!-- this line creates a button calls the function draw_a() when clicked-->
-	<input type="button" onclick="draw_a()" value="Draw rectangle">
+	<div class="flex-container">
 	
-	<!-- this line creates a button calls the function name_a() when clicked-->
-	<input type="button" onclick="name_a()" value="Print name">
+		<!-- this line creates a button calls the function draw_a() when clicked-->
+		<input type="button" onclick="draw_a()" value="Draw rectangle">
 	
-	<!-- this line creates a button calls the function image_a() when clicked-->
-	<input type="button" onclick="image_a()" value="Show image">
+		<!-- this line creates a button calls the function name_a() when clicked-->
+		<input type="button" onclick="name_a()" value="Print name">
 	
-	<!-- this line creates a button calls the function clear_a() when clicked-->
-	<input type="button" onclick="clear_a()" value="Clear canvas">
+		<!-- this line creates a button calls the function image_a() when clicked-->
+		<input type="button" onclick="image_a()" value="Show image">
+	
+		<!-- this line creates a button calls the function clear_a() when clicked-->
+		<input type="button" onclick="clear_a()" value="Clear canvas">
+		
+	</div>
 	
 	
 	
