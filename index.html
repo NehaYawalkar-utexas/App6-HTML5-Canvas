@@ -146,6 +146,10 @@ function clear_a() {
     background-color: hsl(0,0%,100%);
 }
 	
+/* This is a flex container. Flex-containers are used to organize elements in your code interactively. 
+I inserted this class because I wanted to make the buttons stack vertically on all platforms, not just phone. 
+This was my solution to Known Issue #2. 
+This flex.container was implemented once within the "w3-container" <div> tag of the HTML code. */
 	
 .flex-container {
 	display: flex; /* or inline-flex */
@@ -174,7 +178,7 @@ function clear_a() {
 	First, we create the actual canvas using the <canvas> tag. Within this tag, we define the width, height, and stroke style.
 	Then, I created a flex container, so that I could stack all the buttons vertically. 
 		I added a class called "flex-container" to the <style> tag above.
-		This class has display attribute as "flex" and the "flex-direction" as "column"
+		This class has "display" attribute as "flex" and the "flex-direction" as "column"
 	Buttons were created by using the <input> tag. Within this tag, we define the type, onclick, and value.
 	-->
 	
@@ -183,6 +187,7 @@ function clear_a() {
 	<!-- this line creates the canvas, defines its dimensions, and pains a border around it-->
 	<canvas id="a" width = "300" height = "300" style = "border: 1px solid #000000;"></canvas>
 	
+	<!-- this line creates the flex container, which will organize the buttons vertically on the user's screen -->
 	<div class="flex-container">
 	
 		<!-- this line creates a button calls the function draw_a() when clicked-->
