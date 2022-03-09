@@ -20,9 +20,9 @@ Brief Description of Goal of Code:
 The goal of this assignment is to develop skills in using <canvas> elements, to be used in further diagnostic apps. 
  
 Known Issues:
-- Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result. (resolved -- moved content to top of screen)
-- On laptop, Draw rectangle button appears adjacent to canvas instead of under. 
-- Need to redeclare var a_canvas and a_context within each function: not working when these vars are global. (resolved -- this is the correct way)
+1. Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result. (resolved -- moved content to top of screen)
+2. On laptop, Draw rectangle button appears adjacent to canvas instead of under. (resolved -- put buttons in flex-container with vertical direction)
+3. Need to redeclare var a_canvas and a_context within each function: not working when these vars are global. (resolved -- this is the correct way)
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -42,8 +42,50 @@ alert("This file last modified " + docMod); // generates alert box with time sta
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 	
 
-//const a_canvas = document.getElementById("a");
-//const a_context = a_canvas.getContext("2d");	
+/**
+In the script section of our code, we define all the drawing functions that will need to be called by the buttons. Each of the four actions requires its own function. 
+
+For each function, we declare a_canvas as the variable calling the canvas in question ("a"). This means that the function can only be used for canvas a, none other.
+	(If we wanted to use the same function for multiple different canvases, we would need to structure the function so that it accepts a parameter for the method .getElementByID().
+	This parameter would identify which canvas we want the function to use.)	
+We define the context for our canvas as "2d", since we are making 2d drawings only. 3d is not possible. 
+
+Breakdown of eath function:
+
+draw_a() is responsible for drawing a rectangle on the canvas. 
+	I used .fillStyle method to make an orange drawing.
+	I used .fillRect method to make a rectangle shaped drawing. This method accepts four parameters: (upper left x coordinate, upper left y coordinate, x length, y length).
+
+name_a() is responsible for printing my name on the canvas.
+	I used .fillStyle method to make a black drawing.
+	I used .textAlign method to make the drawing align to the center of the canvas.
+	I used .textBaseline method to anchor the text to the middle of the line.
+	I used .fillText method to draw text. This method accepts three parameters: (desired text, upper left x coordinate, upper left y coordinate).
+	
+image_a() is responsible for showing an image on the canvas.
+	For this method, the image must first be instantiated using the Image() constructor.
+	Then, the source of the image must be defined using the src attribute.
+	Then, the .onload event method must be called on the image to retrieve it from its source. 
+	This event can call a nested function to actually draw the image on the canvas using the drawImage() method.
+	I used drawImage() method that accepts five parameters: (image name, upper left x coordinate, upper left y coordinate, x scale length, y scale length).
+
+clear_a() is responsible for clearing the canvas.
+	I used .width method to reset the width to itself. This effectivey clears the canvas of any content and restores the default settings of the canvas. 
+
+
+**/
+	
+/**
+Commentary on Known Issue 3
+I was confused about why we would not declare a_canvas and a_context as global variables, like below: 
+
+const a_canvas = document.getElementById("a");
+const a_context = a_canvas.getContext("2d");	
+
+
+The reason is because 
+
+**/
 	
 function draw_a() {
 	var a_canvas = document.getElementById("a");
