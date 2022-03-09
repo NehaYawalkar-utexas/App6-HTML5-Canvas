@@ -40,9 +40,12 @@ var docMod = document.lastModified; // loads last modified time stamp into docMo
 alert("This file last modified " + docMod); // generates alert box with time stamp. If annoying, comment out this entire line.
 console.log("This file last modified " + docMod); // generates message in javaScript console (found in developers tools) with time stamp. 
 	
+	
+var a_canvas = document.getElementById("a");
+var a_context = a_canvas.getContext("2d");
+	
 function draw_a() {
-	var a_canvas = document.getElementById("a");
-	var a_context = a_canvas.getContext("2d");
+	
 	a_context.fillStyle = "orange";
 	a_context.fillRect(50, 25, 150, 100);
 }
@@ -53,7 +56,8 @@ function name_a() {
 	a_context.textAlign = "center";
 	a_context.textBaseline = "middle";
 	a_context.fillText("Neha Yawalkar", 125, 75);
-}
+	
+
 	
 	
 	
@@ -102,8 +106,11 @@ function name_a() {
 	<!-- this line creates a button calls the function draw_a when clicked-->
 	<input type="button" onclick="draw_a()" value="Draw rectangle">
 	
-	<!-- this line creates a button calls the function draw_a when clicked-->
+	<!-- this line creates a button calls the function name_a when clicked-->
 	<input type="button" onclick="name_a()" value="Print name">
+	
+	<!-- this line creates a button calls the function image_a when clicked-->
+	<input type="button" onclick="image_a()" value="Print name">
 	
 	
 	
