@@ -22,7 +22,7 @@ The goal of this assignment is to develop skills in using <canvas> elements, to 
 Known Issues:
 - Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result.
 - On laptop, Draw rectangle button appears adjacent to canvas instead of under. 
-- Need to redeclare var a_canvas and a_context within each function: not working when these vars are global.
+- Need to redeclare var a_canvas and a_context within each function: not working when these vars are global. (resolved -- this is the correct way)
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
@@ -124,7 +124,7 @@ function clear_a() {
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 	
 	<!-- this line creates the canvas, defines its dimensions, and pains a border around it-->
-	<canvas id="a" width = "300" height = "300" style = "border: 1px solid #000000;"></canvas>
+	<canvas id="a" width = "600" height = "300" style = "border: 1px solid #000000;"></canvas>
 	
 	<!-- this line creates a button calls the function draw_a() when clicked-->
 	<input type="button" onclick="draw_a()" value="Draw rectangle">
