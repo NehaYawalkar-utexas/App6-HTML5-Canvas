@@ -20,7 +20,7 @@ Brief Description of Goal of Code:
 The goal of this assignment is to develop skills in using <canvas> elements, to be used in further diagnostic apps. 
  
 Known Issues:
-- Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result.
+- Footer was overlapping with content at bottom, such as rectangle and button. User is unable to click the button as a result. (resolved -- moved content to top of screen)
 - On laptop, Draw rectangle button appears adjacent to canvas instead of under. 
 - Need to redeclare var a_canvas and a_context within each function: not working when these vars are global. (resolved -- this is the correct way)
 https://www.w3schools.com/w3css/default.asp
@@ -105,6 +105,14 @@ function clear_a() {
     z-index: 0;
     background-color: hsl(0,0%,100%);
 }
+	
+	
+.container {
+	display: flex; /* or inline-flex */
+	flex-direction: column;
+	
+}
+	
   .page:target {
     left: 0vw;
     z-index: 1;
